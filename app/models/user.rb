@@ -3,7 +3,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  devise :database_authenticatable,
+  devise :ldap_authenticatable,
          :recoverable, :rememberable, :trackable,
          :validatable, :token_authenticatable
 
@@ -15,6 +15,11 @@ class User
 
   after_destroy :destroy_watchers
   before_save :ensure_authentication_token
+
+  before_save :set_ldap_email
+  def set_ldap_email
+    self.email = Devise::LdapAdapter.get_ldap_param(self.username, "mail")
+  end
 
   validates_presence_of :name
 
