@@ -38,6 +38,11 @@ class User
 
   before_save :ensure_authentication_token
 
+  before_save :set_ldap_email
+  def set_ldap_email
+    self.email = Devise::LdapAdapter.get_ldap_param(self.username, "mail")
+  end
+
   validates_presence_of :name
   validates_uniqueness_of :github_login, :allow_nil => true
 

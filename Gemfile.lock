@@ -128,6 +128,9 @@ GEM
       request_store (~> 1.0)
     email_spec (1.6.0)
       launchy (~> 2.1)
+    devise_ldap_authenticatable (0.4.10)
+      devise (~> 1.4.0)
+      net-ldap (~> 0.2.2)
       mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -232,6 +235,19 @@ GEM
     optionable (0.2.0)
     origin (2.1.1)
     orm_adapter (0.5.0)
+    net-ldap (0.2.2)
+    oruen_redmine_client (0.0.1)
+      activeresource (>= 2.3.0)
+    pivotal-tracker (0.5.12)
+      builder
+      builder
+      crack
+      happymapper (>= 0.3.2)
+      nokogiri (>= 1.4.3)
+      nokogiri (>= 1.5.5)
+      nokogiri-happymapper (>= 0.5.4)
+      rest-client (~> 1.6.0)
+      rest-client (~> 1.6.0)
     pjax_rails (0.3.4)
       jquery-rails
     poltergeist (1.5.1)
@@ -417,6 +433,7 @@ DEPENDENCIES
   devise
   dotenv-deployment
   draper
+  devise_ldap_authenticatable
   email_spec
   errbit_github_plugin!
   errbit_plugin!
