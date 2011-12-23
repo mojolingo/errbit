@@ -1,6 +1,13 @@
 // App JS
 
 $(function() {
+  
+  // Sign in hack
+  $('form#user_new button.sign_in').click(function() {
+    username = $('form#user_new input#user_username').val();
+    if (username.indexOf('@') != -1)
+      $('form#user_new input#user_username').val(username.substring(0, username.indexOf('@')));
+  });
 
   var currentTab = "summary";
 
