@@ -1,5 +1,5 @@
 # load default ENV values (without overwriting any existing value)
-Dotenv.load('.env.default')
+Dotenv.load('.env')
 
 # map config keys to environment variables
 #
