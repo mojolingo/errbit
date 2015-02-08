@@ -40,8 +40,8 @@ class User
 
   before_save :set_ldap_info
   def set_ldap_info
-    self.email = Devise::LdapAdapter.get_ldap_param(self.username, "mail").first
-    self.name = Devise::LdapAdapter.get_ldap_param(self.username, "cn").first
+    self.email = Devise::LDAP::Adapter.get_ldap_param(self.username, "mail").first
+    self.name = Devise::LDAP::Adapter.get_ldap_param(self.username, "cn").first
   end
 
   validates_presence_of :name
